@@ -4,6 +4,14 @@ import (
 	"fmt"
 )
 
+//函数其他语言就四种 有参数，没参数，有返回和没有返回四种但是现在用的是go特殊的返回多个参数的函数
+func sayHello(name string, age int) (sayName, sayAge string, askYou string) {
+	sayName = "我叫" + name
+	sayAge = "今年" + fmt.Sprintf("%d", age) + "岁" //看到这里是不是c++的同学很常见啊
+	askYou = "您呢?"
+	return sayName, sayAge, askYou
+}
+
 func main() {
 	//语句
 	x := 1
@@ -35,4 +43,11 @@ func main() {
 	for k, v := range m {
 		fmt.Println("k,v", k, v)
 	}
+	// var (
+	// 	getName string = "22222"
+	// 	getAge  string = "33333"
+	// 	ask     string = "1111"
+	// )
+	getName, getAge, ask := sayHello("周周", 31)
+	fmt.Println("getName", getName, "getAge", getAge, "ask", ask)
 }
